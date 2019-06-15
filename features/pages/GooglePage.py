@@ -12,6 +12,7 @@ class GoogleRuPage(object):
         self.browser = browser
         self.timeout = 30
 
+
     def find_element(self, *loc):
         assert self.browser.find_element(*loc)
         return self.browser.find_element(*loc)
@@ -20,10 +21,6 @@ class GoogleRuPage(object):
     def visit(self, url):
         self.browser.get(url)
 
-    # Открываем найденную ссылку в том же окне, потому что selenium больше трех вкладок не хочет открывать
-    def visit_without_new_tab(self, *loc):
-        url = self.browser.find_element(*loc).get_attribute("href")
-        self.browser.get(url)
 
     # Позволяет определить поведение экземпляра пользовательского типа при попытке получения значения атрибута
     # Метод должен возвращать значение (возможно вычисляемое) для атрибута, либо генерировать исключение
