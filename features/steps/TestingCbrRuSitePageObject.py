@@ -33,10 +33,10 @@ def step(context):
     page.visit(page.founding_cbr_site_link.get_attribute("href"))
 
 
-@then("check the opening of the site cbr.ru")
-def step(context):
+@when("check the opening of the site '{url}'")
+def step(context, url):
     page = CbrRuPage(context.browser)
-    page.check_site("https://www.cbr.ru/")
+    page.check_site(url)
 
 @then("on cbr.ru opened link Internet-reception")
 def step(context):
