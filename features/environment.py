@@ -16,9 +16,9 @@ def before_scenario(context, scenario):
 
 
 def after_scenario(context, scenario):
-    print("scenario status" + scenario.status)
-    context.browser.quit()
     print("After scenario ", scenario, "\n")
+    print("scenario status" + context.scenario.steps[0].name)
+    context.browser.quit()
 
 
 def before_feature(context, feature):

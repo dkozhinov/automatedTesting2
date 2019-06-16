@@ -17,6 +17,10 @@ class CbrRuPage(object):
     def visit(self, url):
         self.browser.get(url)
 
+    def check_site(self, url):
+        print("current_url=", self.browser.current_url)
+        assert self.browser.current_url == url, "Aborting test: Do not check the opening of the site!"
+
 
     # Позволяет определить поведение экземпляра пользовательского типа при попытке получения значения атрибута
     # Метод должен возвращать значение (возможно вычисляемое) для атрибута, либо генерировать исключение

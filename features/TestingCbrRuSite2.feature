@@ -3,6 +3,7 @@ Scenario: Search Bank of Russia site on google.ru
   Given website www.google.ru
   When push search button with text 'Центральный банк РФ'
   Then displayed page www.google.ru and opened cbr.ru site link 
+  Then check the opening of the site cbr.ru
   Then on cbr.ru opened link Internet-reception
   Then opened link Write gratitude
   Then write in textarea MessageBody 'случайный текст'
